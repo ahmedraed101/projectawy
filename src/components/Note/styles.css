@@ -1,0 +1,60 @@
+/* /* textarea {
+    resize: none;
+    max-height: 400px;
+    padding: 40px;
+} */
+
+.note {
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 0px 20px 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeInUp 0.5s both;
+}
+
+.note textarea {
+    border-radius: 10px;
+    resize: none;
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.1rem;
+    line-height: 1.9rem;
+}
+
+.control {
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.control .edit,
+.control .save,
+.control .remove {
+    padding: 5px;
+    height: fit-content;
+    cursor: pointer;
+    user-select: none;
+}
+
+.control .edit {
+    color: goldenrod;
+}
+.control .edit:hover {
+    color: gold;
+}
+
+.control .save {
+    color: #00ff6a;
+}
+
+.control .remove {
+    color: rgb(183, 82, 59);
+    text-decoration: underline;
+}
+
+.control .remove:hover {
+    color: rgb(255, 86, 86);
+}

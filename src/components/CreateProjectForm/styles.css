@@ -1,0 +1,24 @@
+.form {
+    margin-top: 50px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form > * {
+    font-size: 1.2rem;
+    padding: 20px;
+    outline: none;
+}
+
+.error {
+    margin: 30px;
+    text-align: center;
+    color: rgb(255 27 85);
+    border-left: 3px solid rgb(255 27 85);
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: #191c1e;
+    animation: fadeInLeft 1s both;
+}

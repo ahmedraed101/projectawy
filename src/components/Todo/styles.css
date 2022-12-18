@@ -1,0 +1,40 @@
+.todo {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 5px 5px 10px;
+    margin: 10px 5px 5px;
+    border-left: 1px solid black;
+    border-color: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    user-select: none;
+    animation: fadeInLeft 0.4s both;
+}
+
+.todo p {
+    font-size: 1rem;
+    word-wrap: break-word;
+    user-select: none;
+    cursor: pointer;
+}
+.todo-done p:first-child {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.todo p:first-child {
+    flex-grow: 1;
+}
+
+.remove {
+    min-width: fit-content;
+    color: indianred;
+    transform: all 0.2s ease-in-out;
+    text-decoration: underline;
+}
+
+.remove:hover {
+    color: var(--red-color);
+}

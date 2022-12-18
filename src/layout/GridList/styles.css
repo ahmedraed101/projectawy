@@ -1,0 +1,13 @@
+.flex {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: flex-start;
+    align-content: center;
+    transition: all 0.2s ease-in-out;
+    z-index: 0;
+}

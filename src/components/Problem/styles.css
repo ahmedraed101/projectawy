@@ -1,0 +1,94 @@
+.problem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 400px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 0px 20px 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeInUp 0.5s both;
+}
+
+.solved {
+    background-color: rgb(13 240 173 / 8%);
+    box-shadow: inset 0px 0px 12px 0px rgb(69 255 202 / 43%);
+}
+
+.unsolved {
+    background-color: rgb(240 13 81 / 8%);
+    box-shadow: inset 0px 0px 12px 0px rgb(255 69 97 / 43%);
+}
+
+.current {
+    background-color: rgb(13 157 240 / 8%);
+    box-shadow: inset 0px 0px 12px 0px rgb(69 205 255 / 43%);
+}
+
+.problem .info {
+    margin: 10px 0 0;
+}
+
+.problem .title,
+.problem .description {
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 10px;
+    color: white;
+    outline: none;
+    font-size: 1.2rem;
+    width: 100%;
+    background-color: rgb(59, 59, 59);
+}
+.problem .description {
+    text-align: left;
+    font-size: 1rem;
+    color: gray;
+    text-transform: lowercase;
+}
+
+.problem .title:disabled,
+.problem .description:disabled {
+    background-color: transparent;
+}
+
+.todos {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.todos .todos-area {
+    max-height: 180px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.create-todos form {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    gap: 4px;
+}
+
+/* .create-todos input { */
+.todo-input {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.create-todos input,
+.create-todos button {
+    background-color: inherit;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: inherit;
+}

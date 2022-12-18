@@ -1,0 +1,7 @@
+/* .title {
+} */
+
+.selected {
+    color: yellow;
+    border: 3px solid red;
+}
