@@ -18,10 +18,10 @@ const NavBar = () => {
             <NavLink
                 to='create'
                 className={({ isActive }) =>
-                    isActive ? 'selected' : undefined
+                    isActive ? 'selected create' : 'create'
                 }
             >
-                Create
+                +
             </NavLink>
         </div>
     )
