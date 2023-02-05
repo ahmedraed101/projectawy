@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Note from './../Note/Note'
 import Problem from './../Problem/Problem'
@@ -7,6 +7,7 @@ import SelectStatus from './../SelectStatus/SelectStatus'
 import GridList from './../../layout/GridList/GridList'
 import {
     updateProject,
+    removeProject,
     addNote,
     addProblem,
 } from './../../redux/reducers/ProjectReducer.js'
@@ -22,6 +23,8 @@ const ProjectPage = () => {
     const project = projects.find((project) => project.id === id)
     const projectId = id
 
+    const navigate = useNavigate()
+
     const submitNote = (e) => {
         e.preventDefault()
         if (note.trim() === '') return
@@ -36,10 +39,16 @@ const ProjectPage = () => {
         setProblem('')
     }
 
+    const handleRemoveProject = () => {
+        dispatch(removeProject(projectId))
+        navigate('/')
+    }
+
     return (
         <>
             <h1>{project.title}</h1>
             <h3>{project.description}</h3>
+            <button onClick={handleRemoveProject}>remove</button>
             <SelectStatus
                 defaultvalue={project.status}
                 handleOnChange={(status) => {
@@ -64,7 +73,7 @@ const ProjectPage = () => {
             </div>
 
             <div className='problems-section'>
-                <GridList items={project.problems}>
+                <GridList items={project.problems} projectId={projectId}>
                     <Problem />
                 </GridList>
                 <form onSubmit={submitProblem}>
