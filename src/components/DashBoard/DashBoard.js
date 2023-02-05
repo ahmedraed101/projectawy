@@ -7,7 +7,7 @@ const DashBoard = () => {
     return (
         <>
             <h1>Dashboard</h1>
-            <div className='message'>🐱‍👤 Peace, Nice to see you Ahmed.</div>
+            <div className='message'>🐱‍👤 Peace, Let's do some work.</div>
             <div className='container'>
                 {projects.map((project) => (
                     <ProjectDiv project={project} key={project.id} />
