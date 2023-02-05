@@ -3,7 +3,9 @@ import projectHelper from './../helpers/Project'
 import noteHelper from './../helpers/Note'
 import problemHelper from './../helpers/Problem'
 
-const defaultState = []
+const defaultState = localStorage.getItem('projectawy')
+    ? JSON.parse(localStorage.getItem('projectawy')).projects
+    : []
 
 // const ProjectReducer = (state = defaultState, action) => {
 //     switch (action.type) {
@@ -50,8 +52,12 @@ const ProjectsSlice = createSlice({
             state[projectIndex] = { ...state[projectIndex], ...updates }
         },
 
-        deleteProject: (state, id) => {
-            state = state.filter((project) => project.id !== id)
+        removeProject: (state, { payload: { projectId } }) => {
+            // state = state.filter((project) => project.id !== projectId)
+            const projectIndex = state.find(
+                (project) => project.id === projectId
+            )
+            state.splice(projectIndex, 1)
         },
 
         // Notes reducers
@@ -192,7 +198,7 @@ const ProjectsSlice = createSlice({
 export const {
     createProject,
     updateProject,
-    deleteProject,
+    removeProject,
     addNote,
     updateNote,
     removeNote,
